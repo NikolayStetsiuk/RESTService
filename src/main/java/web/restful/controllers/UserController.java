@@ -10,17 +10,4 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
-public class UserController {
-
-    UserDeserialisation userDeserialisation;
-
-    public UserController(UserDeserialisation userDeserialisation) {
-        this.userDeserialisation = userDeserialisation;
-    }
-
-
-    @GetMapping
-    public List<User> readUser(){
-        return userDeserialisation.readUser();
-    }
-}
+public class UserController { }
