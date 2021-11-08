@@ -5,6 +5,7 @@ import web.restful.deserialization.UserDeserialisation;
 import web.restful.domain.User;
 import web.restful.repository.UserRepositiry;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserServiceImpl implements UserService{
@@ -20,7 +21,10 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public List<User> ListAll(User user) {
-        return null;
+
+        List<User> users = new ArrayList<>();
+        userRepositiry.findAll().forEach(users :: add);
+        return users;
     }
 
     @Override
