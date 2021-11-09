@@ -1,6 +1,7 @@
 package web.restful.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import web.restful.deserialization.UserDeserialisation;
 import web.restful.domain.User;
 import web.restful.repository.UserRepositiry;
@@ -8,6 +9,7 @@ import web.restful.repository.UserRepositiry;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class UserServiceImpl implements UserService{
 
     UserRepositiry userRepositiry;
