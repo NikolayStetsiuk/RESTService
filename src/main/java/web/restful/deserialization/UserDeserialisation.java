@@ -3,9 +3,8 @@ package web.restful.deserialization;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
-import web.restful.domain.User;
+import web.restful.domain.Users;
 
 import java.io.IOException;
 import java.net.URL;
@@ -19,20 +18,20 @@ public class UserDeserialisation {
 
     ObjectMapper objectMapper = new ObjectMapper();
 
-    List<User> userList = new ArrayList<>();
+    List<Users> usersList = new ArrayList<>();
 
-    public List<User> readUser(){
+    public List<Users> readUser(){
 
         objectMapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
         try {
-            // user= objectMapper.readValue(new URL(url),User.class);
+            // Users= objectMapper.readValue(new URL(url),Users.class);
 
-            userList = objectMapper.readValue(new URL(url), new TypeReference<List<User>>(){});
+            usersList = objectMapper.readValue(new URL(url), new TypeReference<List<Users>>(){});
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return userList ;
+        return usersList;
 
     }
 

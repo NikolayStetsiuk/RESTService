@@ -5,8 +5,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import web.restful.deserialization.UserDeserialisation;
-import web.restful.domain.User;
+import web.restful.domain.Users;
 import web.restful.services.UserService;
 
 import java.util.List;
@@ -24,7 +23,7 @@ public class UserController {
     }
 
     @GetMapping
-    public List<User> readUser() {
+    public List<Users> readUser() {
         return userService.readUser();
     }
 

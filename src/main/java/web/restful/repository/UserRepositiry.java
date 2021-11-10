@@ -1,7 +1,7 @@
 package web.restful.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import web.restful.domain.User;
+import web.restful.domain.Users;
 
-public interface UserRepositiry extends CrudRepository <User,Long> {
+public interface UserRepositiry extends CrudRepository <Users,Long> {
 }

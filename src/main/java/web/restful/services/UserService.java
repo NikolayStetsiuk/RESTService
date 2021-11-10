@@ -1,19 +1,21 @@
 package web.restful.services;
 
-import web.restful.domain.User;
+import web.restful.domain.Users;
 
 import java.util.List;
 
 public interface UserService {
 
-    public List<User> ListAll(User user);
+    public List<Users> ListAll(Users users);
 
-    public User createUser();
+    public Users createUser(Users users);
 
-    public void deleteUser();
+    public void deleteUser(Long id);
 
-    public User updateUser();
+    public Users updateUser();
 
-    public List<User> readUser();
+    public List<Users> readUser();
+
+    public Users saveAll(List<Users> listUsers);
 
 }
