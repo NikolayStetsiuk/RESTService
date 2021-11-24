@@ -22,10 +22,8 @@ public class UserDeserialisation {
 
     public List<Users> readUser(){
 
-        objectMapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
+        //objectMapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
         try {
-            // Users= objectMapper.readValue(new URL(url),Users.class);
-
             usersList = objectMapper.readValue(new URL(url), new TypeReference<List<Users>>(){});
         } catch (IOException e) {
             e.printStackTrace();
