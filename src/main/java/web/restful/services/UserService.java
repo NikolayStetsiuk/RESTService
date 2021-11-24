@@ -16,6 +16,5 @@ public interface UserService {
 
     public List<Users> readUser();
 
-    public Users saveAll(List<Users> listUsers);
-
+    public Iterable<Users> save();
 }

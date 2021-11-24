@@ -18,12 +18,14 @@ public class UserDeserialisation {
 
     ObjectMapper objectMapper = new ObjectMapper();
 
-    List<Users> usersList = new ArrayList<>();
+   List<Users> usersList = new ArrayList<>();
 
-    public List<Users> readUser(){
+    public List<Users> read_JSON_User(){
 
-        //objectMapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
+        objectMapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
         try {
+            // Users= objectMapper.readValue(new URL(url),Users.class);
+
             usersList = objectMapper.readValue(new URL(url), new TypeReference<List<Users>>(){});
         } catch (IOException e) {
             e.printStackTrace();
@@ -32,5 +34,7 @@ public class UserDeserialisation {
         return usersList;
 
     }
+
+
 
 }

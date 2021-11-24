@@ -40,24 +40,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Users saveAll(List<Users> listUsers) {
-
-        if (listUsers != null) {
-            for (Users users : userDeserialisation.readUser()) {
-                userRepositiry.save(users);
-                return users;
-            }
-        }
-        return null;
-    }
-
-    @Override
     public Users updateUser() {
         return null;
     }
 
     @Override
     public List<Users> readUser() {
-        return userDeserialisation.readUser();
+        return userDeserialisation.read_JSON_User();
+    }
+
+    @Override
+    public Iterable<Users> save() {
+
+        return userRepositiry.saveAll(userDeserialisation.read_JSON_User());
     }
 }
