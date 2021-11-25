@@ -19,5 +19,5 @@ public interface UserService {
 
     public Iterable<Users> save();
 
-    public Users getById(Long id);
+    public Optional<Users> getById(Long id);
 }

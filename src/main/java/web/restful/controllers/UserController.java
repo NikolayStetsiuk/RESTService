@@ -6,11 +6,13 @@ import web.restful.domain.Users;
 import web.restful.services.UserService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
 @CrossOrigin(origins = {"http://localhost:4200/"})
 public class UserController {
+
 
     UserService userService;
 
@@ -29,8 +31,8 @@ public class UserController {
         return userService.save();
     }
 
-    @GetMapping("/{id}")
-    public Users getUserById(@PathVariable Long id){
-        return userService.getById(id);
+    @GetMapping("/get/{id}")
+    public Optional<Users> getUserById(@PathVariable("id") String id){
+        return userService.getById(Long.valueOf(id));
     }
 }
