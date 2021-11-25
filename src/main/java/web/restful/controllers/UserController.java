@@ -29,4 +29,10 @@ public class UserController {
         return userService.save();
     }
 
+    @GetMapping("/{id}")
+    public Users getUserById(@PathVariable Long id){
+        return userService.getById(id);
+    }
+
+
 }

@@ -8,6 +8,7 @@ import web.restful.repository.UserRepositiry;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -53,5 +54,10 @@ public class UserServiceImpl implements UserService {
     public Iterable<Users> save() {
 
         return userRepositiry.saveAll(userDeserialisation.read_JSON_User());
+    }
+
+    @Override
+    public Users getById(Long id) {
+        return userRepositiry.findById(id).orElse(null);
     }
 }
