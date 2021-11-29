@@ -1,6 +1,7 @@
 package web.restful.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import web.restful.deserialization.UserDeserialisation;
 import web.restful.domain.Users;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Component
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -31,17 +33,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Users createUser(Users users) {
+    public Users create(Users users) {
         return userRepositiry.save(users);
     }
-    
+
     @Override
-    public Users updateUser() {
+    public Users update() {
         return null;
     }
 
     @Override
-    public List<Users> readUser() {
+    public List<Users> read() {
         return userDeserialisation.read_JSON_User();
     }
 

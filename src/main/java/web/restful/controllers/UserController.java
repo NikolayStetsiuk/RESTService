@@ -1,6 +1,7 @@
 package web.restful.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import web.restful.domain.Users;
 import web.restful.services.UserService;
@@ -8,22 +9,19 @@ import web.restful.services.UserService;
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+@RestController("UserController")
 @RequestMapping("/users")
 @CrossOrigin(origins = {"http://localhost:4200/"})
-public class UserController {
-
-
-    UserService userService;
+public class UserController extends BaseController<Users> {
 
     @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
+    public UserController(@Qualifier("userService") UserService userService) {
+        super(userService);
     }
 
-    @GetMapping
+  /*  @GetMapping
     public List<Users> readUser() {
-        return userService.readUser();
+        return userService.read();
     }
 
     @PostMapping("/save")
@@ -39,5 +37,5 @@ public class UserController {
     @DeleteMapping("/delete/{id}")
     public void deleteByID(@PathVariable("id") String id){
         userService.deleteByID(Long.valueOf(id));
-    }
+    }*/
 }
