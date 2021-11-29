@@ -11,8 +11,6 @@ public interface UserService {
 
     public Users createUser(Users users);
 
-    public void deleteUser(Long id);
-
     public Users updateUser();
 
     public List<Users> readUser();
@@ -20,4 +18,6 @@ public interface UserService {
     public Iterable<Users> save();
 
     public Optional<Users> getById(Long id);
+
+    public void deleteByID(Long id);
 }

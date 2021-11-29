@@ -34,12 +34,7 @@ public class UserServiceImpl implements UserService {
     public Users createUser(Users users) {
         return userRepositiry.save(users);
     }
-
-    @Override
-    public void deleteUser(Long id) {
-        userRepositiry.deleteById(id);
-    }
-
+    
     @Override
     public Users updateUser() {
         return null;
@@ -59,5 +54,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<Users> getById(Long id) {
         return userRepositiry.findById(id);
+    }
+
+    @Override
+    public void deleteByID(Long id) {
+        userRepositiry.deleteById(id);
     }
 }
